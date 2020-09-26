@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="input1" />
+    <button type="button" id="fetch1">Fetch then catch</button>
+    <button type="button" id="fetch2">Fetch async await</button>
+    <script>
+      const url = "https://rickandmortyapi.com/api/character";
+      window.onload = start; // cuando carga el DOM
+      function start() {
+        console.log("Hi");
+        document
+          .getElementById("input1")
+          .addEventListener("input", handlerInput);
+
+        document.getElementById("fetch1").addEventListener("click", fetch1);
+        document.getElementById("fetch2").addEventListener("click", fetch2);
+      }
+
+      const fetch2 = async () => {
+        try {
+          // otra forma de resolver promises
+          const response = await fetch(url);
+          const { results: data } = await response.json();
+          console.log(data);
+        } catch (e) {
+          console.log(e);
+        }
+      };
+
+      const fetch1 = () => {
+        // fetch
+        fetch(url)
+          .then((response) => response.json())
+          .then(({ results: data }) => console.log(data))
+          .catch((error) => console.log(error));
+        // operacionb que depende del get a la api rest
+        // axios
+      };
+      const handlerInput = (e) => {
+        console.log(e);
+        console.log(e.target.value);
+      };
+    </script>
+  </body>
+</html>
