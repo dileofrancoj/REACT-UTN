@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Error from "./Error";
-const Registro = () => {
+const shortId = require("short-id");
+
+const Registro = ({ addUsers }) => {
   const [error, setError] = useState(false);
   const [user, setUser] = useState({
     nombre: "",
@@ -27,6 +29,20 @@ const Registro = () => {
       return;
     }
     // propagar el estado al app
+    const { nombre, apellido, mail } = user;
+    const userObject = {
+      id: shortId.generate(),
+      nombre,
+      apellido,
+      mail,
+    };
+
+    addUsers(userObject);
+    setUser({
+      nombre: "",
+      apellido: "",
+      mail: "",
+    });
   };
   return (
     <>
