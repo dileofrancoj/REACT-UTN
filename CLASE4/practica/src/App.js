@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Personajes from "./components/Personajes/Personajes";
+import Grafico from "./components/Chart";
 function App() {
   return (
     <>
-      <h1>Personajes</h1>
-      <h2>Rick & Mort</h2>
+      <Grafico />
       <Personajes />
     </>
   );
