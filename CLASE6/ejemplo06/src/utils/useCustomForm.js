@@ -3,9 +3,9 @@ import { useState } from "react";
 const useCustomForm = () => {
   const [state, setState] = useState({});
   const handlerChange = (e) => {
-    setState(...state, { [e.target.name]: e.target.value });
+    setState({ ...state, [e.target.name]: e.target.value });
   };
-  return [state, handlerChange];
+  return [state, handlerChange, setState];
 };
 
 export default useCustomForm;

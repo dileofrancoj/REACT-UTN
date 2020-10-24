@@ -3,6 +3,9 @@ const axios = require("axios"); // npm i axios
 
 const useGet = ({ url, params = {}, initialState = [] }) => {
   const [data, setData] = useState(initialState);
+  /*
+    {}
+  */
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -19,6 +22,17 @@ const useGet = ({ url, params = {}, initialState = [] }) => {
     get();
   }, [url]);
   return [data, isLoading, error];
+};
+
+const usePost = async (url, obj) => {
+  const [error, setError] = useState(false);
+  const [data, setData] = useState({});
+  try {
+    setData(await axios.post(url, obj));
+  } catch (e) {
+    setError(false);
+  }
+  return [data, error];
 };
 
 export default useGet;
