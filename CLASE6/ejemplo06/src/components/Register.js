@@ -14,10 +14,6 @@ const schema = yup.object().shape({
   email: yup.string().email().required(),
 });
 const Register = () => {
-  // const reg = new Regexp(\w{5,}\)
-  // reg.validate()
-  // const patente = \[A-Za-z{2}\s[0-9]{3}\s[A-Za-z]{2}]
-
   const [values, handler, setValues] = useCustomForm(); // [estado del componente, handler del hook]
 
   const { register, handleSubmit, errors } = useForm({
