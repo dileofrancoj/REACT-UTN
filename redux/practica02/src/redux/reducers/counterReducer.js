@@ -1,6 +1,6 @@
 import { INCREMENT, DECREMENT } from "./../actions/counter";
 const initialState = 0;
-
+// useForm()
 const counter = (state = initialState, action) => {
   switch (action.type) {
     case INCREMENT:
