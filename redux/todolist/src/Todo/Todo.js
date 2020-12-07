@@ -17,7 +17,7 @@ const Todo = ({ addTodo, todo, deleteTodo, updateTodo }) => {
 
     addTodo(obj);
   };
-
+  // const toggle = (id) => {}
   return (
     <>
       <Container>
