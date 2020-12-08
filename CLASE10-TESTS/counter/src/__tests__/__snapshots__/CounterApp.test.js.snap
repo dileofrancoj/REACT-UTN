@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas de CounterApp Debe cargar el CounterApp 1`] = `ShallowWrapper {}`;
+
+exports[`Pruebas de CounterApp con valor 10 por default Debe cargar el CounterApp 1`] = `ShallowWrapper {}`;

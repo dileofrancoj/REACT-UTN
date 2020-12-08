@@ -1,12 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 // import PrimeraApp from './PrimeraApp'
-import CounterApp from './CounterApp';
+import CounterApp from "./CounterApp";
 
-import './index.css';
+import "./index.css";
 
+const divRoot = document.querySelector("#app");
 
-const divRoot = document.querySelector('#app');
-
-ReactDOM.render( <CounterApp value={ 10 } />  , divRoot );
-
+ReactDOM.render(<CounterApp value={10} />, divRoot);

@@ -1,9 +1,9 @@
 export const getUser = () => ({
-  uid: "abcabc1",
+  uid: "ab",
   username: "francodileo",
 });
 
 export const getActiveUser = (nombre) => ({
-  uid: "asdasd",
+  id: "ab",
   username: nombre,
 });
